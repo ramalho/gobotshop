@@ -28,7 +28,7 @@ func handleChange(data interface{}) {
 
 func main() {
 	firmataAdaptor := firmata.NewAdaptor("/dev/cu.usbmodem1411")
-	sensor := aio.NewAnalogSensorDriver(firmataAdaptor, inputPin, 10)
+	sensor := aio.NewAnalogSensorDriver(firmataAdaptor, inputPin)
 	work := func() {
 		sensor.On(sensor.Event("data"), handleChange)
 	}
